@@ -1,0 +1,25 @@
+<html>
+<title>New User</title>
+<head></head>
+<body>
+	<!-- * old form * 
+		<%= form_tag(controller: "users", action: 'create', method: "POST") do %>
+		<%= label_tag(:username, "Username: ", class: "label") %><br>
+		<%= text_field_tag(:name_input) %><br><br>
+		<%= label_tag(:email, "Email: ", class: "label") %><br>
+		<%= text_field_tag(:email_input) %><br><br>
+		<%= label_tag(:password, "Password: ", class: "label") %><br>
+		<%= password_field_tag(:password_input) %><br>
+		<%= submit_tag("Create User") %><br>
+	<% end %>
+
+	-- * end old form * -->
+
+	<%= form_for @user, url: {action: "create"} do |f| %>
+		Your Username:<br><%= f.text_field :username, value: "Enter a username" %><br /><br>
+		Your Email:<br><%= f.text_field :email, value: "myemail@example.com" %><br /><br>
+		Your Password:<br><%= f.password_field :password %><br />
+		<%= f.submit %>
+	<% end %>
+
+</body>

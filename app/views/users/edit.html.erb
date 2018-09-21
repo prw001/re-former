@@ -1,0 +1,11 @@
+<html>
+<title>Edit User</title>
+<head></head>
+<body>
+	<%= form_for @user do |f| %>
+		Your Username: <%= @user.username %><br>
+		Your Email: <%= @user.email %><br><br>
+		Your New Password:<br><%= f.password_field :password %><br />
+		<%= f.submit %>
+	<% end %>
+</body>
