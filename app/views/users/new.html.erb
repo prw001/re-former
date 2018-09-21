@@ -1,6 +1,16 @@
 <html>
 <title>New User</title>
 <head></head>
+<header>
+	<% if @user.errors.any? %>
+	<h3>Unable to Create User due to the following errors:</h3>
+		<ul>
+			<% @user.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+		</ul>
+	<% end %>
+</header>
 <body>
 	<!-- * old form * 
 		<%= form_tag(controller: "users", action: 'create', method: "POST") do %>

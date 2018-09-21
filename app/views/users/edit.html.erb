@@ -1,6 +1,16 @@
 <html>
 <title>Edit User</title>
 <head></head>
+<header>
+	<% if @user.errors.any? %>
+		<h3>Edits were not saved due to the following errors:</h3>
+		<ul>
+			<% @user.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+		</ul>
+	<% end %>
+</header>
 <body>
 	<%= form_for @user do |f| %>
 		Your Username: <%= @user.username %><br>
